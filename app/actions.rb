@@ -23,7 +23,10 @@ post '/messages' do
     author: params[:author],
     content: params[:content]
   )
-  @message.save
-  redirect '/messages'
+  if @message.save
+    redirect '/messages'
+  else
+    erb :'messages/new'
+  end
 end
 
