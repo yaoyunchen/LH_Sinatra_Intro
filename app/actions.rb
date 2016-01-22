@@ -17,10 +17,16 @@ get '/messages/:id' do
   erb :'messages/show'
 end
 
+get '/redirect' do
+
+  redirect 'www.google.ca'
+end
+
 post '/messages' do
   @message = Message.new(
     author: params[:author],
-    content: params[:content]
+    content: params[:content],
+    url: params[:url]
   )
   if @message.save
     redirect '/messages'

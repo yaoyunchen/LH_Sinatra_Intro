@@ -1,4 +1,11 @@
-<p>Author: <%= @message.author %></p>
+<p><strong>Author:</strong> <%= @message.author %></p>
 <p><%= @message.content %></p>
+<% if @message.url? %>
+  <p>
+    <em>url: </em>
+      <a href = "<%= @message.url %>"><%= @message.url %></a>
+  </p>
+<% end %>
 <hr/>
+
 <a href="/messages">Back to All Messages</a>
