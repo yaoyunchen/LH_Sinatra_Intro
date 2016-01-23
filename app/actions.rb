@@ -21,7 +21,9 @@ post '/messages' do
   @message = Message.new(
     author: params[:author],
     content: params[:content],
-    url: params[:url]
+    url: params[:url],
+    created_at: params[:created_at],
+    updated_at: params[:updated_at]
   )
   if @message.save
     redirect '/messages'

@@ -1,4 +1,5 @@
 <p><strong>Author:</strong> <%= @message.author %></p>
+<p><small>Posted on <%= @message.created_at %></small></p>
 <p><%= @message.content %></p>
 <% if @message.url? %>
   <p>
