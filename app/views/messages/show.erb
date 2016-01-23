@@ -9,4 +9,20 @@
 <% end %>
 <hr/>
 
+<a href="/messages/all">All posts from this author.</a>
+<% @all = Message.where(author: @message.author) %>
+<% @all.each do |post| %>
+<p><small>Posted on <%= post.created_at %></small></p>
+<p><%= post.content %></p>
+<% if post.url? %>
+  <p>
+    <em>url: </em>
+      <a href = "<%= @message.url %>"><%= post.url %></a>
+  </p>
+<% end %>
+<hr/>
+<% end %>
+
+
+<br>
 <a href="/messages">Back to All Messages</a>

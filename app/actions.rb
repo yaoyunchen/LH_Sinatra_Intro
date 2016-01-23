@@ -12,6 +12,11 @@ get '/messages/new' do
   erb :'messages/new'
 end
 
+get '/messages/all' do
+  erb :'messages/all'
+end
+
+
 get '/messages/:id' do
   @message = Message.find params[:id]
   erb :'messages/show'
